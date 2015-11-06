@@ -1,0 +1,97 @@
+body{
+    font-family: 'Quicksand';
+}
+
+.compulsory{
+    color: red;
+}
+
+    .compulsory span {
+        z-index:10;
+        display:none;
+        font-weight: lighter;
+        text-align: left;
+        padding:14px 20px;
+        width:185px;
+        line-height:16px;
+        border-radius:4px;
+        box-shadow: 5px 5px 8px #CCC;
+    }
+
+.compulsory:hover span,
+.compulsory:focus span{
+    display:inline;
+    position:absolute;
+    color: red;
+    border:1px solid #DCA;
+    background:#fffAF0;
+}
+
+.inputCaptcha{
+	background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555555;
+    display: block;
+    font-size: 14px;
+    height: 38px;
+    line-height: 1.42857;
+    padding: 7px 12px;
+    -webkit-transition:  border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    -moz-transition:  border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    -ms-transition:  border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    -o-transition:  border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    transition:  border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.inputCaptcha:focus{
+    border-color: #66afe9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+}
+
+.inputCaptchaError{
+    border-color: red;
+}
+
+.radio{
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.errorSpan{
+    color: red;
+    display: none;
+}
+
+#responseFormReservation{
+    text-align: center;
+    display: none;
+}
+
+.formReservation{
+    display:block;
+    clear: both;
+    background: #FAFAD2;
+    border: 3px solid #FFE4B5;
+    border-bottom-right-radius: 10px;
+    box-shadow: 10px 10px 5px #FFE4B5;
+    margin: 20px 0;
+}
+
+.btnDiv .btnJS{
+    display: block;
+    /*max-width: 50%;*/
+    margin: 20px auto;
+    overflow: hidden;
+    -o-text-overflow: ellipsis; /* pour Opera 9 */
+    text-overflow: ellipsis;
+}
+
+.btnDiv .btnJS:hover{
+    overflow: visible;
+    -o-text-overflow: inherit;
+    text-overflow: inherit;
+}
