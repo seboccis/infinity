@@ -22,9 +22,9 @@
 		  	<div class="carousel-inner" role="listbox">
 		    	<div class="item active">
 		      		<a class="carouselImg" href="#" data-carouselCard="carouselCard0">
-		      			<img src="<?= $this->assetUrl('img/cars/' .  $carCarousselData[0]['fileName']) ?>" alt="">
+		      			<img src="<?= $this->assetUrl('img/cars/' .  $carCarousselData[0]['fileName']) ?>" alt="Photo du véhicule <?= $carCarousselData[0]['genre']; ?><?php if(!empty($carCarousselData[0]['brand'])){ echo " " . $carCarousselData[0]['brand'] . " " . $carCarousselData[0]['model']; } ?>">
 		      			<div class="carousel-caption">
-		      			    <span class="legend"></span>
+		      			    <span class="legend"><?= $carCarousselData[0]['genre']; ?><?php if(!empty($carCarousselData[0]['brand'])){ echo " | " . $carCarousselData[0]['brand'] . " " . $carCarousselData[0]['model']; } ?></span>
 		      			</div>
 		      		</a>
 		    	</div>
@@ -33,9 +33,9 @@
 
     		    	<div class="item">
 				     	<a class="carouselImg" href="#" data-carouselCard="carouselCard<?= $index; ?>">
-				     		<img src="<?= $this->assetUrl('img/cars/' . $carCarousselData[$index]['fileName']) ?>" alt="">
+				     		<img src="<?= $this->assetUrl('img/cars/' . $carCarousselData[$index]['fileName']) ?>" alt="Photo du véhicule <?= $carCarousselData[$index]['genre']; ?><?php if(!empty($carCarousselData[$index]['brand'])){ echo " " . $carCarousselData[$index]['brand'] . " " . $carCarousselData[$index]['model']; } ?>">
 				     		<div class="carousel-caption">
-			      			    <span class="legend"></span>
+			      			    <span class="legend"><?= $carCarousselData[$index]['genre']; ?><?php if(!empty($carCarousselData[$index]['brand'])){ echo " | " . $carCarousselData[$index]['brand'] . " " . $carCarousselData[$index]['model']; } ?></span>
 			      			</div>
 				     	</a>
 				    </div>

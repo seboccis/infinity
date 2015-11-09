@@ -105,9 +105,23 @@ body{
     margin: 0 auto;
 }
 
-    .carousel .carousel-inner .item  .carouselImg  img{
-        margin: 0 auto;
+    .carousel .carousel-indicators li{
+        border-color: black;
     }
+
+    .carousel .carousel-indicators .active{
+        background-color: black;
+    }
+
+    .carousel .carousel-inner{}
+
+        .carousel .carousel-inner .item  .carouselImg  img{
+            margin: 0 auto;
+        }
+
+        .carousel .carousel-inner .item  .carouselImg .carousel-caption .legend{
+            color: black;
+        }
 
 .carouselCard{
     display: none;
