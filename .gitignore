@@ -1,4 +1,30 @@
 docs/
 vendor/
 app/config.php
+<<<<<<< Updated upstream
 sql/
+=======
+<<<<<<< HEAD
+composer.lock
+
+composer.phar
+
+composer.lock
+
+*.lock
+
+composer.lock
+
+composer.lock
+
+composer.lock
+
+composer.lock
+
+*.lock
+
+composer.lock
+=======
+sql/
+>>>>>>> origin/master
+>>>>>>> Stashed changes
