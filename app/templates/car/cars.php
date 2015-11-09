@@ -64,13 +64,25 @@
 	  	
 	</div>
 
-	<div id="carouselCard1" class="carouselCard"><span>a</span></div>
+	<div id="carouselCard1" class="carouselCard">
+		<span>a</span>
+		<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
+	</div>
 
-	<div id="carouselCard2" class="carouselCard"><span>b</span></div>
+	<div id="carouselCard2" class="carouselCard">
+		<span>b</span>
+		<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
+	</div>
 
-	<div id="carouselCard3" class="carouselCard"><span>c</span></div>
+	<div id="carouselCard3" class="carouselCard">
+		<span>c</span>
+		<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
+	</div>
 
-	<div id="carouselCard4" class="carouselCard"><span>d</span></div>
+	<div id="carouselCard4" class="carouselCard">
+		<span>d</span>
+		<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>		
+	</div>
 
 	<script type="text/javascript" src="<?= $this->assetUrl('js/carousel.js') ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/myCarousel.js') ?>"></script>
