@@ -3,6 +3,7 @@
 	namespace Controller;
 
 	use \W\Controller\Controller;
+	use \Manager\CarManager;
 	use Controller\SessionController;
 
 	class CarController extends Controller
@@ -21,7 +22,16 @@
 		 */
 		public function vehicules()
 		{
-			$this->show('car/cars');
+			$carManager 	  = new CarManager();
+			$numberCars 	  = $carManager->count();
+			$carCarousselData = $carManager->getCarCarouselData();
+
+			$data = [
+						'numberCars' 		=> $numberCars,
+						'carCarousselData'  => $carCarousselData,
+					];
+
+			$this->show('car/cars', $data);
 		}
 
 		/**

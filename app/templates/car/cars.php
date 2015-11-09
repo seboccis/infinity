@@ -1,90 +1,78 @@
 <?php $this->layout('front_layout', ['title' => 'Véhicules', 'page' => 5]) ?>
 
-<?php $this->start('main_content') ?>
+<?php $this->start('main_content') 	?>
 
-	<div id="carCarousel" class="carousel slide" data-ride="carousel">
+	<?php 	if($numberCars > 0){		?>
 
-	  	<!-- Indicators -->
-	  	<ol class="carousel-indicators">
-	    	<li data-target="#carCarousel" data-slide-to="0" class="active"></li>
-	    	<li data-target="#carCarousel" data-slide-to="1"></li>
-	    	<li data-target="#carCarousel" data-slide-to="2"></li>
-	    	<li data-target="#carCarousel" data-slide-to="3"></li>
-	 	 </ol>
+		<div id="carCarousel" class="carousel slide" data-ride="carousel">
 
-	  	<!-- Wrapper for slides -->
-	  	<div class="carousel-inner" role="listbox">
-	    	<div class="item active">
-	      		<a class="carouselImg" href="#" data-carouselCard="carouselCard1">
-	      			<img src="<?= $this->assetUrl('img/cars/01.jpg') ?>" alt="Limousine">
-	      			<div class="carousel-caption">
-	      			    <span class="legend">Limousine</span>
-	      			</div>
-	      		</a>
-	    	</div>
+		  	<!-- Indicators -->
+		  	<ol class="carousel-indicators">
+		    	<li data-target="#carCarousel" data-slide-to="0" class="active"></li>
 
-		    <div class="item">
-		     	<a class="carouselImg" href="#" data-carouselCard="carouselCard2">
-		     		<img src="<?= $this->assetUrl('img/cars/02.jpg') ?>" alt="Monospace">
-		     		<div class="carousel-caption">
-	      			    <span class="legend">Monospace</span>
-	      			</div>
-		     	</a>
-		    </div>
+		    	<?php for($index = 1; $index < $numberCars; $index++){ 		?>
 
-		    <div class="item">
-		    	<a class="carouselImg" href="#" data-carouselCard="carouselCard3">
-		    		<img src="<?= $this->assetUrl('img/cars/03.jpg') ?>" alt="Berline">
-		    		<div class="carousel-caption">
-	      			    <span class="legend">Berline</span>
-	      			</div>
-		    	</a>
-		    </div>
+			    	<li data-target="#carCarousel" data-slide-to="<?= $index; ?>"></li>
 
-		    <div class="item">
-		    	<a class="carouselImg" href="#" data-carouselCard="carouselCard4">
-		    		<img src="<?= $this->assetUrl('img/cars/04.jpg') ?>" alt="Exécutive">
-		    		<div class="carousel-caption">
-	      			    <span class="legend">Exécutive</span>
-	      			</div>
-		    	</a>
-		    </div>
+			    <?php }														?>
 
-	  	</div>
+		 	 </ol>
 
-	  	<!-- Left and right controls -->
-	  	<a class="left carousel-control" href="#carCarousel" role="button" data-slide="prev">
-	    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	    	<span class="sr-only">Previous</span>
-	  	</a>
-	  	<a class="right carousel-control" href="#carCarousel" role="button" data-slide="next">
-	    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	    	<span class="sr-only">Next</span>
-	  	</a>
-	  	
-	</div>
+		  	<!-- Wrapper for slides -->
+		  	<div class="carousel-inner" role="listbox">
+		    	<div class="item active">
+		      		<a class="carouselImg" href="#" data-carouselCard="carouselCard0">
+		      			<img src="<?= $this->assetUrl('img/cars/' .  $carCarousselData[0]['fileName']) ?>" alt="">
+		      			<div class="carousel-caption">
+		      			    <span class="legend"></span>
+		      			</div>
+		      		</a>
+		    	</div>
 
-	<div id="carouselCard1" class="carouselCard">
-		<span>a</span>
-		<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
-	</div>
+    	    	<?php for($index = 1; $index < $numberCars; $index++){ 		?>
 
-	<div id="carouselCard2" class="carouselCard">
-		<span>b</span>
-		<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
-	</div>
+    		    	<div class="item">
+				     	<a class="carouselImg" href="#" data-carouselCard="carouselCard<?= $index; ?>">
+				     		<img src="<?= $this->assetUrl('img/cars/' . $carCarousselData[$index]['fileName']) ?>" alt="">
+				     		<div class="carousel-caption">
+			      			    <span class="legend"></span>
+			      			</div>
+				     	</a>
+				    </div>
 
-	<div id="carouselCard3" class="carouselCard">
-		<span>c</span>
-		<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
-	</div>
+    		    <?php }														?>
 
-	<div id="carouselCard4" class="carouselCard">
-		<span>d</span>
-		<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>		
-	</div>
+		  	</div>
 
-	<script type="text/javascript" src="<?= $this->assetUrl('js/carousel.js') ?>"></script>
-	<script type="text/javascript" src="<?= $this->assetUrl('js/myCarousel.js') ?>"></script>
-	
-<?php $this->stop('main_content') ?>
+		  	<!-- Left and right controls -->
+		  	<a class="left carousel-control" href="#carCarousel" role="button" data-slide="prev">
+		    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    	<span class="sr-only">Previous</span>
+		  	</a>
+		  	<a class="right carousel-control" href="#carCarousel" role="button" data-slide="next">
+		    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    	<span class="sr-only">Next</span>
+		  	</a>
+		  	
+		</div>
+
+		<div id="carouselCard0" class="carouselCard">
+			<span>0</span>
+			<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
+		</div>
+
+    	<?php for($index = 1; $index < $numberCars; $index++){ 		?>
+
+	    	<div id="carouselCard<?= $index; ?>" class="carouselCard">
+				<span><?= $index; ?></span>
+				<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
+			</div>
+
+	    <?php }														?>
+
+		<script type="text/javascript" src="<?= $this->assetUrl('js/carousel.js') ?>"></script>
+		<script type="text/javascript" src="<?= $this->assetUrl('js/myCarousel.js') ?>"></script>
+		
+	<?php 	}							?>
+
+<?php $this->stop('main_content') 	?>
