@@ -32,14 +32,6 @@
 		}
 
 		/**
-		 * Page sur les véhicules
-		 */
-		public function vehicules()
-		{
-			$this->show('default/vehicules');
-		}
-
-		/**
 		 * Page de contact
 		 */
 		public function contact()

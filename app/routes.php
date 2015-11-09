@@ -17,7 +17,7 @@
 		['GET', '/conciergerie/', 'Default#conciergerie', 'conciergerie'],
 
 		/*Page sur les véhicules*/ 
-		['GET', '/vehicules/', 'Default#vehicules', 'vehicules'],
+		['GET', '/vehicules/', 'Car#vehicules', 'vehicules'],
 
 		/*Page de réservation*/ 
 		['GET', '/reservation/', 'Car#reservation', 'reservation'],

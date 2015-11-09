@@ -95,3 +95,16 @@ body{
     -o-text-overflow: inherit;
     text-overflow: inherit;
 }
+
+.carousel{
+    width: 80%;
+    margin: 0 auto;
+}
+
+    .carousel .carousel-inner .item  .carouselImg  img{
+        margin: 0 auto;
+    }
+
+.carouselCard{
+    display: none;
+}

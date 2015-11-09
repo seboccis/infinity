@@ -246,5 +246,7 @@
 		<div class="alert alert-dismissible alert-success" id="responseFormReservation">
 		</div>
     </div>
+
+    <script type="text/javascript" src="<?= $this->assetUrl('js/main.js') ?>"></script>
 	
 <?php $this->stop('main_content') ?>

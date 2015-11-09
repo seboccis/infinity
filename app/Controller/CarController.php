@@ -17,6 +17,14 @@
 		}
 
 		/**
+		 * Page sur les véhicules
+		 */
+		public function vehicules()
+		{
+			$this->show('car/cars');
+		}
+
+		/**
 		 * Page de réservation
 		 */
 		public function reservation()
