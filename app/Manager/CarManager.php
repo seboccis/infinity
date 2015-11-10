@@ -3,6 +3,7 @@
 	namespace Manager;
 
 	use Manager\DefaultManager;
+	use Manager\ImageManager;
 
 	/**
 	 * Le manager de véhicules (cars)
@@ -16,14 +17,17 @@
 		 */
 		public function getCarCarouselData()
 		{
-			$sql = "SELECT cars.id as id, cars.genre as genre, cars.brand as brand, cars.model as model, images.fileName as fileName
-					FROM cars
-					LEFT JOIN images
-					ON  cars.idImg = images.id";
-			$sth = $this->dbh->prepare($sql);
-			$sth->execute();
+			$arrayCars = $this->findAll();
 
-			return $sth->fetchAll();
+			$imageManager = new ImageManager();
+
+			for($index = 0; $index < count($arrayCars); $index++){
+				$idCar = $arrayCars[$index]['id'];
+
+				$arrayCars[$index]['fileName'] = $imageManager->findCarPrincipalImgFileName($idCar);
+			}
+
+			return $arrayCars;
 		}
 
 	}
