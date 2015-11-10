@@ -81,6 +81,10 @@ body{
     margin: 20px 0;
 }
 
+.hiddenFormGroup{
+    display: none;
+}
+
 .btnDiv .btnJS{
     display: block;
     /*max-width: 50%;*/
@@ -98,7 +102,7 @@ body{
 
 
 
-/****** Les caroussels ******/
+/****** Caroussel ******/
 
 .carousel{
     width: 80%;
@@ -133,3 +137,13 @@ body{
         display: block;
         margin: 0 auto;
     }
+
+/****** Calendrier ******/
+
+#ui-datepicker-div{
+    font-size: 80%;
+}
+
+.compulsory span.glyphicon-calendar{
+    color: black;
+}

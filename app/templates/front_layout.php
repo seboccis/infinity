@@ -5,10 +5,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <?php if($page == 2 || $page == 6){ echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkrPkBV5tNNsIIdDtPMKFdFWsZCTECenM&amp;libraries=places"></script>' ; } ?>
 	<title><?= $this->e($title) ?> | Infinity Services VIP</title>
-	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <?php if($page == 2 || $page == 6){ echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkrPkBV5tNNsIIdDtPMKFdFWsZCTECenM&amp;libraries=places"></script>
+                                            <script type="text/javascript" src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+                                            <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.4/themes/ui-darkness/jquery-ui.css">' ; } ?>
+	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Quicksand:400,700'>
 	<link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/reset.css') ?>">
   <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/journal.min.css') ?>">

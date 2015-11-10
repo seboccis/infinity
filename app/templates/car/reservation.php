@@ -43,7 +43,7 @@
 		    		</span>
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<input class="form-control personalData" id="inputName" name="name" placeholder="Nom" type="text" <?php if(isset($session['user']['name'])){ echo 'value="' . $session['user']['name'] . '"'; } ?>>
+		        	<input class="form-control" id="inputName" name="name" placeholder="Nom" type="text" <?php if(isset($session['user']['name'])){ echo 'value="' . $session['user']['name'] . '"'; } ?>>
 		    	</div>
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanName"></span>
 		    </div>
@@ -53,7 +53,7 @@
 		    		Prénom
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<input class="form-control personalData" id="inputFirstName" name="firstName" placeholder="Prénom" type="text" <?php if(isset($session['user']['firstName'])){ echo 'value="' . $session['user']['firstName'] . '"'; } ?>>
+		        	<input class="form-control" id="inputFirstName" name="firstName" placeholder="Prénom" type="text" <?php if(isset($session['user']['firstName'])){ echo 'value="' . $session['user']['firstName'] . '"'; } ?>>
 		    	</div>
 		    </div>
 
@@ -66,7 +66,7 @@
 		    		</span>
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<input class="form-control personalData" id="inputPhoneNumber" name="phoneNumber" placeholder="Téléphone" type="text" <?php if(isset($session['user']['phoneNumber'])){ echo 'value="' . $session['user']['phoneNumber'] . '"'; } ?>>
+		        	<input class="form-control" id="inputPhoneNumber" name="phoneNumber" placeholder="Téléphone" type="text" <?php if(isset($session['user']['phoneNumber'])){ echo 'value="' . $session['user']['phoneNumber'] . '"'; } ?>>
 		    	</div>
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanPhoneNumber"></span>
 		    </div>
@@ -80,7 +80,7 @@
 		    		</span>
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<input class="form-control personalData" id="inputEmail" name="email" placeholder="Email" type="text" <?php if(isset($session['user']['email'])){ echo 'value="' . $session['user']['email'] . '"'; } ?>>
+		        	<input class="form-control" id="inputEmail" name="email" placeholder="Email" type="text" <?php if(isset($session['user']['email'])){ echo 'value="' . $session['user']['email'] . '"'; } ?>>
 		    	</div>
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanEmail"></span>
 		    </div>
@@ -90,7 +90,7 @@
 		    		Adresse
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<input class="form-control personalData" id="inputAddress" name="address" placeholder="Adresse" type="text" <?php if(isset($session['user']['address'])){ echo 'value="' . $session['user']['address'] . '"'; } ?>>
+		        	<input class="form-control" id="inputAddress" name="address" placeholder="Adresse" type="text" <?php if(isset($session['user']['address'])){ echo 'value="' . $session['user']['address'] . '"'; } ?>>
 		    	</div>
 		    </div>
 
@@ -99,7 +99,7 @@
 		    		Ville
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<input class="form-control personalData" id="inputCity" name="city" placeholder="Ville" type="text" <?php if(isset($session['user']['city'])){ echo 'value="' . $session['user']['city'] . '"'; } ?>>
+		        	<input class="form-control" id="inputCity" name="city" placeholder="Ville" type="text" <?php if(isset($session['user']['city'])){ echo 'value="' . $session['user']['city'] . '"'; } ?>>
 		    	</div>
 		    </div>
 
@@ -108,7 +108,7 @@
 		    		Code postal
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<input class="form-control personalData" id="inputZipcode" name="zipcode" placeholder="Code postal" type="text" <?php if(isset($session['user']['zipcode'])){ echo 'value="' . $session['user']['zipcode'] . '"'; } ?>>
+		        	<input class="form-control" id="inputZipcode" name="zipcode" placeholder="Code postal" type="text" <?php if(isset($session['user']['zipcode'])){ echo 'value="' . $session['user']['zipcode'] . '"'; } ?>>
 		    	</div>
 		    </div>
 
@@ -126,7 +126,46 @@
 
 			<legend>Votre demande</legend>
 
+			<div class="form-group">
+				<label for="inputDate" class="col-lg-3 control-label">
+					Date de la prestation
+					<span class="compulsory">
+						*
+						<span>Champ obligatoire</span>
+					</span>
+				</label>
+				<div class="col-lg-9">
+					<div class="input-group date">
+					    <input type="text" class="form-control" value="<?= date('d/m/Y') ?>" id="inputDate" name="date">
+					    <div class="input-group-addon">
+					        <a class="showCalendar" href="#"><span class="glyphicon glyphicon-calendar"></span></a>
+					    </div>
+					</div>
+				</div>
+				<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanDate"></span>
+			</div>
+
 		    <div class="form-group">
+		    	<label for="selectCategory" class="col-lg-3 control-label">
+		    		Choix de la prestation
+		    		<span class="compulsory">
+		    			*
+		    			<span>Champ obligatoire</span>
+		    		</span>
+		    	</label>
+		    	<div class="col-lg-9">
+		        	<select class="form-control" id="selectCategory" name="category">
+		        		<option value="0">Choisir la prestation demandée</option>
+		        		<option value="1">Transfert</option>
+		        		<option value="2">Mise à disposition</option>
+		        		<option value="3">Excursion</option>
+		        		<option value="4">Conciergerie</option>
+		        	</select>
+		    	</div>
+		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanCategory"></span>
+		    </div>
+
+		    <div class="form-group hiddenFormGroup">
 		    	<label for="inputOrigin" class="col-lg-3 control-label">
 		    		Lieu de prise en charge
 		    		<span class="compulsory">
@@ -140,7 +179,7 @@
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanOrigin"></span>
 		    </div>
 
-		    <div class="form-group">
+		    <div class="form-group hiddenFormGroup">
 		    	<label for="inputDestination" class="col-lg-3 control-label">
 		    		Lieu de dépose
 		    		<span class="compulsory">
@@ -154,28 +193,8 @@
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanDestination"></span>
 		    </div>
 
-		    <div class="form-group">
-		      <label for="select" class="col-lg-3 control-label">Selects</label>
-		      <div class="col-lg-9">
-		        <select class="form-control" id="select">
-		          <option>1</option>
-		          <option>2</option>
-		          <option>3</option>
-		          <option>4</option>
-		          <option>5</option>
-		        </select>
-		        <br>
-		        <select multiple="" class="form-control">
-		          <option>1</option>
-		          <option>2</option>
-		          <option>3</option>
-		          <option>4</option>
-		          <option>5</option>
-		        </select>
-		      </div>
-		    </div>
 
-		    <div class="form-group">
+		    <div class="form-group hiddenFormGroup">
 		    	<label for="textArea" class="col-lg-3 control-label">
 		    		Message
 		    	</label>
@@ -232,6 +251,7 @@
 		    </div>
 		     -->
 
+			
 
 			<div class="col-lg-12 btnDiv">
 		    	<button class="btn btn-default btnJS" id="btnCancelFormReservationRequest">Vider les champs de votre demande</button>
