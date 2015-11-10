@@ -17,7 +17,7 @@
 
 <body>
 
-  <?php if(isset($_SESSION['reservation'])){ debug($_SESSION['reservation']) ;} ?>
+  <!-- <?php if(isset($_SESSION['reservation'])){ debug($_SESSION['reservation']) ;} ?> -->
 
 	<div class="container">
 
