@@ -81,10 +81,6 @@ body{
     margin: 20px 0;
 }
 
-.hiddenFormGroup{
-    display: none;
-}
-
 .btnDiv .btnJS{
     display: block;
     /*max-width: 50%;*/
@@ -133,9 +129,9 @@ body{
     border-radius: 6px;
 }
 
-    .carouselCard .btnBackToCarousel{
+    .carouselCard .btn{
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 10px;
     }
 
 /****** Calendrier ******/

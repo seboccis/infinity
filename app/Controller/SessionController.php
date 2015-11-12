@@ -64,4 +64,11 @@
 			$this->refreshSession();
 		}
 
+		public function setSessionRequest($key, $value)
+		{
+			$this->setSession('request', $key, $value);
+
+			$this->refreshSession();
+		}
+
 	}

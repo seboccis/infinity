@@ -60,6 +60,7 @@
 
 	    	<div id="carouselCard<?= $index; ?>" class="carouselCard">
 				<span><?= $carCarousselData[$index]['genre']; ?><?php if(!empty($carCarousselData[$index]['brand'])){ echo " | " . $carCarousselData[$index]['brand'] . " " . $carCarousselData[$index]['model']; } ?></span>
+				<div class="col-lg-12"><button class="btn btn-primary btnSelectModel" data-car-id="<?= $carCarousselData[$index]['id']; ?>" data-ajax-path="<?= $this->url('selectModel') ?>" data-ajax-pathResponse="<?= $this->url('reservation') ?>">Réserver une prestation avec ce véhicule</button></div>
 				<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
 			</div>
 

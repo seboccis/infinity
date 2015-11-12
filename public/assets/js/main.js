@@ -96,6 +96,13 @@ function cancelFormReservationPersonalInformations(event)
 	event.stopPropagation();
 }
 
+$('#btnCancelFormReservationPersonalInformations').on('click', cancelFormReservationPersonalInformations);
+
+$('#btnSubmitFormReservation').on('click', validateFormReservation);
+
+
+//// Partie Request de la réservation
+
 function cancelFormReservationRequest(event)
 {
 	event.preventDefault();
@@ -110,18 +117,29 @@ function cancelFormReservationRequest(event)
 	event.stopPropagation();
 }
 
-$('#btnCancelFormReservationPersonalInformations').on('click', cancelFormReservationPersonalInformations);
 $('#btnCancelFormReservationRequest').on('click', cancelFormReservationRequest);
 
-$('#btnSubmitFormReservation').on('click', validateFormReservation);
+function initRequest()
+{
+	var genre = $('#selectGenre option:selected').attr('value');
+	
+	$('.hiddenFormGroup').fadeOut(0);
+
+	if(genre == 1){
+		$('.formGroupTransfert').fadeIn(0);
+	}
+}
+
+$('#selectGenre').on('change', initRequest);
 
 google.maps.event.addDomListener(window, 'load', function() {
 			var inputOrigin 	 = new google.maps.places.Autocomplete(document.getElementById('inputOrigin'), { types: ['geocode'], componentRestrictions: {country: 'fr'} });
 			var inputDestination = new google.maps.places.Autocomplete(document.getElementById('inputDestination'), { types: ['geocode'], componentRestrictions: {country: 'fr'} });
+			initRequest();
 		});
 
 
-////// Calendrier
+// Calendrier
 
 /* French initialisation for the jQuery UI date picker plugin. */
 /* Written by Keith Wood (kbwood{at}iinet.com.au),

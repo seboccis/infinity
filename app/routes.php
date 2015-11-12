@@ -31,4 +31,7 @@
 		/*Validation du formulaire de réservation*/ 
 		['GET', '/reservation/validateReservation/', 'Form#validateReservation', 'validateReservation'],
 
+		/*Sélection d'un modèle*/ 
+		['GET', '/reservation/selectModel/', 'Car#selectModel', 'selectModel'],
+
 	);

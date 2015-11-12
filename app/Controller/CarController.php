@@ -49,10 +49,24 @@
 			$data = [
 						'session' 	   	=> $session,
 						'carSelectData' => $carSelectData,
-
 					];
 
 			$this->show('car/reservation', $data);
+		}
+
+		/**
+		 * Requête AJAX por garder en mémoire le véhicule choisie et
+		 * être redirigé vers la réservation 
+		 */
+		public function selectModel()
+		{
+			$id = trim(strip_tags($_GET["id"]));
+			$response = $_GET['pathResponse'];
+
+			$sessionController = new SessionController();
+			$sessionController->setSessionRequest('car', $id);
+
+			die($response);
 		}
 
 	}

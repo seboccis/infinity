@@ -127,7 +127,7 @@
 			<legend>Votre demande</legend>
 
 		    <div class="form-group">
-		    	<label for="selectCategory" class="col-lg-3 control-label">
+		    	<label for="selectGenre" class="col-lg-3 control-label">
 		    		Choix de la prestation
 		    		<span class="compulsory">
 		    			*
@@ -135,15 +135,15 @@
 		    		</span>
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<select class="form-control" id="selectCategory" name="category">
+		        	<select class="form-control" id="selectGenre" name="category">
 		        		<option value="0">Choisir la prestation demandée</option>
-		        		<option value="1">Transfert</option>
-		        		<option value="2">Mise à disposition</option>
-		        		<option value="3">Excursion</option>
-		        		<option value="4">Conciergerie</option>
+		        		<option value="1" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 1){ echo "selected"; } ?>>Transfert</option>
+		        		<option value="2" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 2){ echo "selected"; } ?>>Mise à disposition</option>
+		        		<option value="3" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 3){ echo "selected"; } ?>>Excursion</option>
+		        		<option value="4" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 4){ echo "selected"; } ?>>Conciergerie</option>
 		        	</select>
 		    	</div>
-		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanCategory"></span>
+		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanGenre"></span>
 		    </div>
 
 		    <div class="form-group">
@@ -163,7 +163,7 @@
 
 <?php 		foreach($arrayCarsByGenre['cars'] as $car){		?>
 
-							<option value="<?= $this->e($car['id']) ?>"><?= $this->e($car['brand']) ?> <?= $this->e($car['model']) ?></option>
+							<option value="<?= $this->e($car['id']) ?>" <?php if(isset($session['request']['car']) && $session['request']['car'] == $this->e($car['id'])){ echo "selected"; } ?>><?= $this->e($car['brand']) ?> <?= $this->e($car['model']) ?></option>
 
 <?php 		}												?>
 
@@ -208,7 +208,7 @@
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanOrigin"></span>
 		    </div>
 
-		    <div class="form-group hiddenFormGroup">
+		    <div class="form-group hiddenFormGroup formGroupTransfert">
 		    	<label for="inputDestination" class="col-lg-3 control-label">
 		    		Lieu de dépose
 		    		<span class="compulsory">
@@ -223,7 +223,7 @@
 		    </div>
 
 
-		    <div class="form-group hiddenFormGroup">
+		    <div class="form-group hiddenFormGroup formGroupTransfert">
 		    	<label for="textArea" class="col-lg-3 control-label">
 		    		Message
 		    	</label>
