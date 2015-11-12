@@ -56,15 +56,10 @@
 		  	
 		</div>
 
-		<div id="carouselCard0" class="carouselCard">
-			<span>0</span>
-			<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
-		</div>
-
-    	<?php for($index = 1; $index < $numberCars; $index++){ 		?>
+    	<?php for($index = 0; $index < $numberCars; $index++){ 		?>
 
 	    	<div id="carouselCard<?= $index; ?>" class="carouselCard">
-				<span><?= $index; ?></span>
+				<span><?= $carCarousselData[$index]['genre']; ?><?php if(!empty($carCarousselData[$index]['brand'])){ echo " | " . $carCarousselData[$index]['brand'] . " " . $carCarousselData[$index]['model']; } ?></span>
 				<div class="col-lg-12"><button class="btn btn-primary btnBackToCarousel">Retourner au caroussel</button></div>
 			</div>
 
