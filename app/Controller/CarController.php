@@ -42,8 +42,14 @@
 			$sessionController = new SessionController();
 			$session = $sessionController->session;
 
+			$carManager    = new CarManager();
+
+			$carSelectData = $carManager->getCarSelectData();
+
 			$data = [
-						'session' => $session,
+						'session' 	   	=> $session,
+						'carSelectData' => $carSelectData,
+
 					];
 
 			$this->show('car/reservation', $data);

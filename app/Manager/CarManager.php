@@ -17,7 +17,7 @@
 		 */
 		public function getCarCarouselData()
 		{
-			$arrayCars = $this->findAll();
+			$arrayCars = $this->findAllRand();
 
 			$imageManager = new ImageManager();
 
@@ -28,6 +28,34 @@
 			}
 
 			return $arrayCars;
+		}
+
+		/**
+		 * Cherche les données nécessaires pour mettre en place le select de véhicules
+		 * @return array Les données
+		 */
+		public function getCarSelectData()
+		{
+			$carSelectData = [];
+
+			$arrayGenres = $this->getAll('genre');
+
+			foreach($arrayGenres as $genre){
+				$sql = "SELECT * 
+						FROM " . $this->table . "
+						WHERE genre = '" . $genre ."'";
+				$sth = $this->dbh->prepare($sql);
+				$sth->execute();
+
+				$arrayCars = $sth->fetchAll();
+
+				$carSelectData[] = array(
+											"genre" => $genre,
+											"cars"	=> $arrayCars,
+										);
+			}
+
+			return $carSelectData;
 		}
 
 	}

@@ -126,25 +126,6 @@
 
 			<legend>Votre demande</legend>
 
-			<div class="form-group">
-				<label for="inputDate" class="col-lg-3 control-label">
-					Date de la prestation
-					<span class="compulsory">
-						*
-						<span>Champ obligatoire</span>
-					</span>
-				</label>
-				<div class="col-lg-9">
-					<div class="input-group date">
-					    <input type="text" class="form-control" value="<?= date('d/m/Y') ?>" id="inputDate" name="date">
-					    <div class="input-group-addon">
-					        <a class="showCalendar" href="#"><span class="glyphicon glyphicon-calendar"></span></a>
-					    </div>
-					</div>
-				</div>
-				<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanDate"></span>
-			</div>
-
 		    <div class="form-group">
 		    	<label for="selectCategory" class="col-lg-3 control-label">
 		    		Choix de la prestation
@@ -164,6 +145,54 @@
 		    	</div>
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanCategory"></span>
 		    </div>
+
+		    <div class="form-group">
+		    	<label for="selectModel" class="col-lg-3 control-label">
+		    		Choix du véhicule
+		    		<span class="compulsory">
+		    			*
+		    			<span>Champ obligatoire</span>
+		    		</span>
+		    	</label>
+		    	<div class="col-lg-9">
+		        	<select class="form-control" id="selectModel" name="model">
+
+<?php 	foreach($carSelectData as $arrayCarsByGenre){		?>
+
+						<optgroup label="<?= $this->e($arrayCarsByGenre['genre']) ?>">
+
+<?php 		foreach($arrayCarsByGenre['cars'] as $car){		?>
+
+							<option value="<?= $this->e($car['id']) ?>"><?= $this->e($car['brand']) ?> <?= $this->e($car['model']) ?></option>
+
+<?php 		}												?>
+
+						</optgroup>
+
+<?php }														?>
+
+		        	</select>
+		    	</div>
+		    </div>
+
+			<div class="form-group">
+				<label for="inputDate" class="col-lg-3 control-label">
+					Date de la prestation
+					<span class="compulsory">
+						*
+						<span>Champ obligatoire</span>
+					</span>
+				</label>
+				<div class="col-lg-9">
+					<div class="input-group date">
+					    <input type="text" class="form-control" value="<?= date('d/m/Y') ?>" id="inputDate" name="date">
+					    <div class="input-group-addon">
+					        <a class="showCalendar" href="#"><span class="glyphicon glyphicon-calendar"></span></a>
+					    </div>
+					</div>
+				</div>
+				<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanDate"></span>
+			</div>
 
 		    <div class="form-group hiddenFormGroup">
 		    	<label for="inputOrigin" class="col-lg-3 control-label">
