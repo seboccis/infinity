@@ -113,7 +113,7 @@
 		    </div>
 
 	    	<div class="col-lg-12 btnDiv">
-	        	<button class="btn btn-default btnJS" id="btnCancelFormReservationPersonalInformations">Vider les champs des informations personnelles</button>
+	        	<button class="btn btn-default btnJS" id="btnCancelFormReservationPersonalInformations" data-ajax-path="<?= $this->url('unsetSessionUser'); ?>">Vider les champs des informations personnelles</button>
 	        </div>
 
 		</fieldset>
@@ -136,7 +136,7 @@
 		    	</label>
 		    	<div class="col-lg-9">
 		        	<select class="form-control" id="selectGenre" name="category">
-		        		<option value="0">Choisir la prestation demandée</option>
+		        		<option class="defaultOption" value="0">Choisir la prestation demandée</option>
 		        		<option value="1" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 1){ echo "selected"; } ?>>Transfert</option>
 		        		<option value="2" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 2){ echo "selected"; } ?>>Mise à disposition</option>
 		        		<option value="3" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 3){ echo "selected"; } ?>>Excursion</option>
@@ -156,6 +156,8 @@
 		    	</label>
 		    	<div class="col-lg-9">
 		        	<select class="form-control" id="selectModel" name="model">
+
+		        		<option class="defaultOption" value="0">Choisir le véhicule désiré</option>
 
 <?php 	foreach($carSelectData as $arrayCarsByGenre){		?>
 
@@ -185,7 +187,7 @@
 				</label>
 				<div class="col-lg-9">
 					<div class="input-group date">
-					    <input type="text" class="form-control" value="<?= date('d/m/Y') ?>" id="inputDate" name="date">
+					    <input type="text" class="form-control" value="<?= date('d/m/Y') ?>" id="inputDate" name="date" placeholder="<?= date('d/m/Y') ?>">
 					    <div class="input-group-addon">
 					        <a class="showCalendar" href="#"><span class="glyphicon glyphicon-calendar"></span></a>
 					    </div>
@@ -194,7 +196,7 @@
 				<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanDate"></span>
 			</div>
 
-		    <div class="form-group hiddenFormGroup">
+		    <div class="form-group hiddenFormGroup formGroupTransfert  formGroupDisposition formGroupExcursion formGroupConciergerie">
 		    	<label for="inputOrigin" class="col-lg-3 control-label">
 		    		Lieu de prise en charge
 		    		<span class="compulsory">
@@ -208,7 +210,7 @@
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanOrigin"></span>
 		    </div>
 
-		    <div class="form-group hiddenFormGroup formGroupTransfert">
+		    <div class="form-group hiddenFormGroup formGroupTransfert formGroupDisposition">
 		    	<label for="inputDestination" class="col-lg-3 control-label">
 		    		Lieu de dépose
 		    		<span class="compulsory">
@@ -283,7 +285,7 @@
 			
 
 			<div class="col-lg-12 btnDiv">
-		    	<button class="btn btn-default btnJS" id="btnCancelFormReservationRequest">Vider les champs de votre demande</button>
+		    	<button class="btn btn-default btnJS" id="btnCancelFormReservationRequest" data-ajax-path="<?= $this->url('unsetSessionRequest'); ?>">Vider les champs de votre demande</button>
 		    </div>
 
 		</fieldset>
@@ -296,6 +298,6 @@
 		</div>
     </div>
 
-    <script type="text/javascript" src="<?= $this->assetUrl('js/main.js') ?>"></script>
+    <script type="text/javascript" src="<?= $this->assetUrl('js/myForm.js') ?>"></script>
 	
 <?php $this->stop('main_content') ?>

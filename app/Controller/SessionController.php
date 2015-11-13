@@ -71,4 +71,10 @@
 			$this->refreshSession();
 		}
 
+		public function unsetSessionRequest()
+		{
+			unset($this->session['request']);
+			$this->refreshSession();
+		}
+
 	}

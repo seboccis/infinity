@@ -28,10 +28,16 @@
 
 		//////*Appels AJAX*//////
 
+		/*Vider la session des données personnelles*/ 
+		['GET', '/reservation/unsetSessionUser/', 'Session#unsetSessionUser', 'unsetSessionUser'],
+
+		/*Sélection d'un véhicule*/ 
+		['GET', '/reservation/selectCar/', 'Car#selectCar', 'selectCar'],
+
+		/*Vider la session des données relatives à la demande*/ 
+		['GET', '/reservation/unsetSessionRequest/', 'Session#unsetSessionRequest', 'unsetSessionRequest'],
+
 		/*Validation du formulaire de réservation*/ 
 		['GET', '/reservation/validateReservation/', 'Form#validateReservation', 'validateReservation'],
-
-		/*Sélection d'un modèle*/ 
-		['GET', '/reservation/selectModel/', 'Car#selectModel', 'selectModel'],
 
 	);

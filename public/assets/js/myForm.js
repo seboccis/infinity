@@ -40,7 +40,7 @@ function showErrorSpan(errorSpans)
 	}
 }
 
-function showDistance(string)
+function showResponseFormReservation(string)
 {
 	$('#responseFormReservation').text(string).fadeIn(0);
 }
@@ -56,7 +56,7 @@ function showValidationFormReservation(response)
 		$('#responseFormReservation').text('Veuillez remplir les champs obligatoires.').css({'display':'block'}).removeClass('alert-success').addClass('alert-danger');
 	}
 	else{
-		showDistance(arrayResponse['response']);
+		showResponseFormReservation(arrayResponse['response']);
 	}
 }
 
@@ -88,10 +88,12 @@ function cancelFormReservationPersonalInformations(event)
 {
 	event.preventDefault();
 
-	// $.ajax({
-	// 	url: "../assets/functions/cancelPersonalInformations.php"
-	// })
-	// .done(deleteFormReservationPersonalInformationsInputsValues);
+	var path = $(this).attr('data-ajax-path');
+
+	$.ajax({
+		url: path
+	})
+	.done(deleteFormReservationPersonalInformationsInputsValues);
 
 	event.stopPropagation();
 }
@@ -103,16 +105,27 @@ $('#btnSubmitFormReservation').on('click', validateFormReservation);
 
 //// Partie Request de la réservation
 
+function deleteFormReservationRequestInputsValues()
+{
+	$(':input','#formReservationRequest')
+  	.removeAttr('checked')
+  	.removeAttr('selected')
+  	.not(':button, :radio, :checkbox')
+  	.val('');
+
+  	$(':input option[class="defaultOption"]','#formReservationRequest').prop('selected', true);
+}
+
 function cancelFormReservationRequest(event)
 {
 	event.preventDefault();
 
-	// $.ajax({
-	// 	url: "../assets/functions/cancelPersonalInformations.php"
-	// })
-	// .done(deleteFormReservationPersonalInformationsInputsValues);
+	var path = $(this).attr('data-ajax-path');
 
-	////// Prévoir une requête AJAX pour vider la session des informations sur la demande
+	$.ajax({
+		url: path
+	})
+	.done(deleteFormReservationRequestInputsValues);
 
 	event.stopPropagation();
 }
@@ -127,6 +140,15 @@ function initRequest()
 
 	if(genre == 1){
 		$('.formGroupTransfert').fadeIn(0);
+	}
+	else if(genre == 2){
+		$('.formGroupDisposition').fadeIn(0);
+	}
+	else if(genre == 3){
+		$('.formGroupExcursion').fadeIn(0);
+	}
+	else if(genre == 4){
+		$('.formGroupConciergerie').fadeIn(0);
 	}
 }
 

@@ -27,7 +27,7 @@ function showCarousel(event)
 	event.stopPropagation();
 }
 
-function selectModel(event)
+function selectCar(event)
 {
 	event.preventDefault();
 
@@ -49,4 +49,4 @@ function selectModel(event)
 
 $('.carouselImg').on('click', showCard);
 $('.btnBackToCarousel').on('click', showCarousel);
-$('.btnSelectModel').on('click', selectModel);
+$('.btnSelectCar').on('click', selectCar);

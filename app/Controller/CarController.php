@@ -55,10 +55,10 @@
 		}
 
 		/**
-		 * Requête AJAX por garder en mémoire le véhicule choisie et
+		 * Requête AJAX pour garder en mémoire le véhicule choisi et
 		 * être redirigé vers la réservation 
 		 */
-		public function selectModel()
+		public function selectCar()
 		{
 			$id = trim(strip_tags($_GET["id"]));
 			$response = $_GET['pathResponse'];
