@@ -27,8 +27,8 @@ body{
     background:#fffAF0;
 }
 
-.inputCaptcha{
-	background-color: #ffffff;
+/* .inputCaptcha{
+    background-color: #ffffff;
     background-image: none;
     border: 1px solid #e7e7e7;
     border-radius: 4px;
@@ -54,7 +54,7 @@ body{
 
 .inputCaptchaError{
     border-color: red;
-}
+} */
 
 .radio{
     display: inline-block;

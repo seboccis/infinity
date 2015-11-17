@@ -57,11 +57,15 @@
 		</div>
 
 		<footer>
-		</footer>
+      <div class="col-lg-12">
+        <button class="btn btn-primary btnJS btnBackToFrontOffice" data-href="<?= $this->url('home'); ?>">Retourner au FrontOffice</button>
+      </div>
+    </footer>
 
 	</div>
 
   <script type="text/javascript" src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/backoffice.js') ?>"></script>
 
 </body>
 
