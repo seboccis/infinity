@@ -92,4 +92,21 @@
 			die($response);
 		}
 
+		/**
+		 * BackOffice | Page sur la gestion des véhicules
+		 */
+		public function backoffice_cars()
+		{
+			$carManager 	   = new CarManager();
+			/*$numberCars 	   = $carManager->count();*/
+			$carBackOfficeData = $carManager->getCarBackOfficeData();
+
+			$data = [
+						/*'numberCars' 		=> $numberCars,*/
+						'carBackOfficeData'  => $carBackOfficeData,
+					];
+
+			$this->show('car/backoffice_cars', $data);
+		}
+
 	}

@@ -2,7 +2,7 @@
 	
 	$w_routes = array(
 
-		//////*Pages*//////
+		//////*Pages du FrontOffice*//////
 
 		/*Page d'accueil*/ 
 		['GET', '/', 'Default#home', 'home'],
@@ -24,6 +24,15 @@
 
 		/*Page de contact*/ 
 		['GET', '/contact/', 'Default#contact', 'contact'],
+
+
+		//////*Pages du BackOffice*//////
+
+		/*Page d'accueil*/ 
+		['GET', '/backoffice/', 'Default#backoffice_home', 'backoffice_home'],
+
+		/*Page sur les véhicules*/ 
+		['GET', '/backoffice/vehicules/', 'Car#backoffice_cars', 'backoffice_cars'],
 
 
 		//////*Appels AJAX*//////

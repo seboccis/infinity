@@ -58,4 +58,13 @@
 			return $carSelectData;
 		}
 
+		/**
+		 * Cherche les données nécessaires pour mettre en place le tableau de gestion des véhicules
+		 * @return array Les données
+		 */
+		public function getCarBackOfficeData()
+		{
+			
+		}
+
 	}

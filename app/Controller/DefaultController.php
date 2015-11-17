@@ -39,4 +39,12 @@
 			$this->show('default/contact');
 		}
 
+		/**
+		 * BackOffice | Page d'accueil
+		 */
+		public function backoffice_home()
+		{
+			$this->show('default/backoffice_home');
+		}
+
 	}
