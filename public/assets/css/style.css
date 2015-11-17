@@ -85,6 +85,10 @@ body{
     background-color: #4B0082;
 }
 
+.btn-primary:hover{
+    background-color: #8A2BE2;
+}
+
 .btnDiv .btnJS{
     display: block;
     /*max-width: 50%;*/
