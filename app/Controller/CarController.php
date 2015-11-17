@@ -55,6 +55,23 @@
 		}
 
 		/**
+		 * Requête AJAX pour aller charcher la fiche détaillée d'un véhicule 
+		 */
+		public function getCarCarouselCard()
+		{
+			$id = trim(strip_tags($_GET["id"]));
+
+			$carManager = new CarManager();
+			$car = $carManager->find($id);
+
+			$data = [
+						'car' 	   	=> $car,
+					];
+
+			$this->show('car/ajax_showCarCarouselCard', $data);
+		}
+
+		/**
 		 * Requête AJAX pour garder en mémoire le véhicule choisi et
 		 * être redirigé vers la réservation 
 		 */

@@ -28,11 +28,14 @@
 
 		//////*Appels AJAX*//////
 
-		/*Vider la session des données personnelles*/ 
-		['GET', '/reservation/unsetSessionUser/', 'Session#unsetSessionUser', 'unsetSessionUser'],
+		/*Aller chercher la fiche détaillée d'un véhicule*/ 
+		['GET', '/carousel/getCarCarouselCard/', 'Car#getCarCarouselCard', 'getCarCarouselCard'],
 
 		/*Sélection d'un véhicule*/ 
 		['GET', '/reservation/selectCar/', 'Car#selectCar', 'selectCar'],
+
+		/*Vider la session des données personnelles*/ 
+		['GET', '/reservation/unsetSessionUser/', 'Session#unsetSessionUser', 'unsetSessionUser'],
 
 		/*Vider la session des données relatives à la demande*/ 
 		['GET', '/reservation/unsetSessionRequest/', 'Session#unsetSessionRequest', 'unsetSessionRequest'],

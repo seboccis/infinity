@@ -3,16 +3,27 @@ function redirectToReservation(response)
 	$(location).attr('href', response);
 }
 
-function showCard(event)
+function showCarouselCard(response)
+{
+	$(".carousel").fadeOut(500);
+	$(".carouselCard").html(response).fadeIn(500);
+
+}
+
+function getCarouselCard(event)
 {
 	event.preventDefault();
 
-	var imgId = $(this).attr('data-carouselCard');
+	var path 		   = $(this).attr('data-ajax-path');
+	var carouselCardId = $(this).attr('data-ajax-carouselCardId');
 
-	$(".carouselCard").fadeOut(0);
-	$(".carousel").fadeOut(0);
-
-	$('#'+imgId).fadeIn(0);
+	$.ajax({
+		url: path,
+		data: 	{
+					id: carouselCardId,
+				}
+	})
+	.done(showCarouselCard);
 
 	event.stopPropagation();
 }
@@ -21,8 +32,10 @@ function showCarousel(event)
 {
 	event.preventDefault();
 
-	$(".carouselCard").fadeOut(0);
-	$(".carousel").fadeIn(0);
+
+	$(".carouselCard").fadeOut(500);
+	$(".carousel").fadeIn(500);
+	$(".carouselCard").empty();
 
 	event.stopPropagation();
 }
@@ -47,6 +60,6 @@ function selectCar(event)
 	event.stopPropagation();
 }
 
-$('.carouselImg').on('click', showCard);
-$('.btnBackToCarousel').on('click', showCarousel);
-$('.btnSelectCar').on('click', selectCar);
+$('.carouselImg').on('click', getCarouselCard);
+$('.carouselCard').on('click','.btnBackToCarousel', showCarousel);
+$('.carouselCard').on('click','.btnSelectCar', selectCar);
