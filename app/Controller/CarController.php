@@ -97,13 +97,13 @@
 		 */
 		public function backoffice_cars()
 		{
-			$carManager 	   = new CarManager();
-			/*$numberCars 	   = $carManager->count();*/
-			$carBackOfficeData = $carManager->getCarBackOfficeData();
+			$carManager = new CarManager();
+			$numberCars = $carManager->count();
+			$cars 		= $carManager->findAll();
 
 			$data = [
-						/*'numberCars' 		=> $numberCars,*/
-						'carBackOfficeData'  => $carBackOfficeData,
+						'numberCars' => $numberCars,
+						'cars' 		 => $cars,
 					];
 
 			$this->show('car/backoffice_cars', $data);

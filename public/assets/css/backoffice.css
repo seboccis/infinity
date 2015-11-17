@@ -1,5 +1,13 @@
-body{
-    font-family: 'Quicksand';
+.page-header div, th, td{
+	text-align: center;
+}
+
+td a{
+	margin-right: 20px;
+}
+
+td a:last-child{
+	margin-right: 0;
 }
 
 .btnJS{
