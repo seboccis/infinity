@@ -94,6 +94,15 @@
 		    	</div>
 		    </div>
 
+		    <!-- <div class="form-group">
+		    	<label for="inputAddress" class="col-lg-3 control-label">
+		    		Adresse
+		    	</label>
+		    	<div class="col-lg-9">
+		        	<input class="form-control" id="inputAddress" name="address" placeholder="Adresse" type="text" <?php if(isset($session['user']['address'])){ echo 'value="' . $session['user']['address'] . '"'; } ?>>
+		    	</div>
+		    </div>
+		    
 		    <div class="form-group">
 		    	<label for="inputCity" class="col-lg-3 control-label">
 		    		Ville
@@ -102,7 +111,7 @@
 		        	<input class="form-control" id="inputCity" name="city" placeholder="Ville" type="text" <?php if(isset($session['user']['city'])){ echo 'value="' . $session['user']['city'] . '"'; } ?>>
 		    	</div>
 		    </div>
-
+		    
 		    <div class="form-group">
 		    	<label for="inputZipcode" class="col-lg-3 control-label">
 		    		Code postal
@@ -110,7 +119,7 @@
 		    	<div class="col-lg-9">
 		        	<input class="form-control" id="inputZipcode" name="zipcode" placeholder="Code postal" type="text" <?php if(isset($session['user']['zipcode'])){ echo 'value="' . $session['user']['zipcode'] . '"'; } ?>>
 		    	</div>
-		    </div>
+		    </div> -->
 
 	    	<div class="col-lg-12 btnDiv">
 	        	<button class="btn btn-default btnJS" id="btnCancelFormReservationPersonalInformations" data-ajax-path="<?= $this->url('unsetSessionUser'); ?>">Vider les champs des informations personnelles</button>

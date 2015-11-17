@@ -155,6 +155,7 @@ function initRequest()
 $('#selectGenre').on('change', initRequest);
 
 google.maps.event.addDomListener(window, 'load', function() {
+			var inputAddress 	 = new google.maps.places.Autocomplete(document.getElementById('inputAddress'), { types: ['geocode'], componentRestrictions: {country: 'fr'} });
 			var inputOrigin 	 = new google.maps.places.Autocomplete(document.getElementById('inputOrigin'), { types: ['geocode'], componentRestrictions: {country: 'fr'} });
 			var inputDestination = new google.maps.places.Autocomplete(document.getElementById('inputDestination'), { types: ['geocode'], componentRestrictions: {country: 'fr'} });
 			initRequest();

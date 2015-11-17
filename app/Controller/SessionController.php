@@ -51,8 +51,6 @@
 			$this->setSession('user', 'phoneNumber', $arrayPersonalData[3]);
 			$this->setSession('user', 'email', $arrayPersonalData[4]);
 			$this->setSession('user', 'address', $arrayPersonalData[5]);
-			$this->setSession('user', 'city', $arrayPersonalData[6]);
-			$this->setSession('user', 'zipcode', $arrayPersonalData[7]);
 
 			$this->refreshSession();
 

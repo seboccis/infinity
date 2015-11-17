@@ -130,8 +130,6 @@
 										$phoneNumber,
 										$email,
 										$address,
-										$city,
-										$zipcode,
 									 ];
 
 				$sessionController->setSessionUser($arrayPersonalData);
