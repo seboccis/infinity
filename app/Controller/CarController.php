@@ -4,6 +4,7 @@
 
 	use \W\Controller\Controller;
 	use \Manager\CarManager;
+	use \Manager\SpecificationManager;
 	use Controller\SessionController;
 
 	class CarController extends Controller
@@ -62,7 +63,12 @@
 			$id = trim(strip_tags($_GET["id"]));
 
 			$carManager = new CarManager();
-			$car = $carManager->find($id);
+			$car 		= $carManager->find($id);
+
+			$specificationManager = new SpecificationManager();
+			$specifications = $specificationManager->findCarSpecifications($id);
+
+			$car['specifications'] = $specifications;
 
 			$data = [
 						'car' 	   	=> $car,

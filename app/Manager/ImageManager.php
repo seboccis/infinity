@@ -21,7 +21,7 @@
 					FROM " . $this->table . "
 					WHERE id = 	(
 									SELECT id_img
-									FROM images_cars
+									FROM cars_images
 									WHERE id_car = :id
 									AND isPrincipal = 1
 								)";
