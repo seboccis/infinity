@@ -81,6 +81,10 @@ body{
     margin: 20px 0;
 }
 
+.btn-primary{
+    background-color: #4B0082;
+}
+
 .btnDiv .btnJS{
     display: block;
     /*max-width: 50%;*/
