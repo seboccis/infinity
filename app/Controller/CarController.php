@@ -97,6 +97,14 @@
 		 */
 		public function backoffice_cars()
 		{
+			$this->show('car/backoffice_cars');
+		}
+
+		/**
+		 * BackOffice | Requête AJAX pour aller chercher le tableau des véhicules
+		 */
+		public function showCarTable()
+		{
 			$carManager = new CarManager();
 			$numberCars = $carManager->count();
 			$cars 		= $carManager->getCarBackOfficeData();
@@ -106,7 +114,19 @@
 						'cars' 		 => $cars,
 					];
 
-			$this->show('car/backoffice_cars', $data);
+			$this->show('car/backoffice_ajax_showCarTable', $data);
 		}
+
+		/**
+		 * BackOffice | Requête AJAX pour supprimer un véhicule de la BD
+		 */
+		public function deleteCar()
+		{}
+
+		/**
+		 * BackOffice | Requête AJAX pour ajouter un véhicule à la BD
+		 */
+		public function addCar()
+		{}
 
 	}

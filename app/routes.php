@@ -52,4 +52,13 @@
 		/*Validation du formulaire de réservation*/ 
 		['GET', '/reservation/validateReservation/', 'Form#validateReservation', 'validateReservation'],
 
+		/*Aller chercher le tableau de véhicules*/ 
+		['GET', '/backoffice/showCarTable/', 'Car#showCarTable', 'showCarTable'],
+
+		/*Supprimer un véhicule de la BD*/ 
+		['GET', '/backoffice/deleteCar/', 'Car#deleteCar', 'deleteCar'],
+
+		/*Ajouter un véhicule à la BD*/ 
+		['GET', '/backoffice/addCar/', 'Car#addCar', 'addCar'],
+
 	);
