@@ -99,7 +99,7 @@
 		{
 			$carManager = new CarManager();
 			$numberCars = $carManager->count();
-			$cars 		= $carManager->findAll();
+			$cars 		= $carManager->getCarBackOfficeData();
 
 			$data = [
 						'numberCars' => $numberCars,

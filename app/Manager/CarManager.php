@@ -64,7 +64,14 @@
 		 */
 		public function getCarBackOfficeData()
 		{
-			
+			$sql = "SELECT *
+					FROM " . $this->table . "
+					ORDER BY genre, brand, model";
+
+			$sth = $this->dbh->prepare($sql);
+			$sth->execute();
+
+			return $sth->fetchAll();
 		}
 
 	}
