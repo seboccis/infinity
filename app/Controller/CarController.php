@@ -56,19 +56,31 @@
 		}
 
 		/**
+		 * Fonction permettant de collecter toutes les données sur un véhicule
+		 * @param int $idCar Identifiant du véhicule
+		 * @return array Les données
+		 */
+		protected function getCarData($idCar)
+		{
+			$carManager = new CarManager();
+			$car 		= $carManager->find($idCar);
+
+			$specificationManager = new SpecificationManager();
+			$specifications = $specificationManager->findCarSpecifications($idCar);
+
+			$car['specifications'] = $specifications;
+
+			return $car;
+		}
+
+		/**
 		 * Requête AJAX pour aller charcher la fiche détaillée d'un véhicule 
 		 */
 		public function getCarCarouselCard()
 		{
 			$id = trim(strip_tags($_GET["id"]));
 
-			$carManager = new CarManager();
-			$car 		= $carManager->find($id);
-
-			$specificationManager = new SpecificationManager();
-			$specifications = $specificationManager->findCarSpecifications($id);
-
-			$car['specifications'] = $specifications;
+			$car = $this->getCarData($id);
 
 			$data = [
 						'car' 	   	=> $car,
@@ -103,7 +115,7 @@
 		/**
 		 * BackOffice | Requête AJAX pour aller chercher le tableau des véhicules
 		 */
-		public function showCarTable()
+		public function getCarTable()
 		{
 			$carManager = new CarManager();
 			$numberCars = $carManager->count();
@@ -114,7 +126,24 @@
 						'cars' 		 => $cars,
 					];
 
-			$this->show('car/backoffice_ajax_showCarTable', $data);
+			$this->show('car/backoffice_ajax_getCarTable', $data);
+		}
+
+		/**
+		 * BackOffice | Requête AJAX pour afficher la div de modification
+		 *				d'un véhicule de la BD
+		 */
+		public function getEditCarCard()
+		{
+			$id = trim(strip_tags($_GET["id"]));
+
+			$car = $this->getCarData($id);
+
+			$data = [
+						'car' 	   	=> $car,
+					];
+
+			$this->show('car/backoffice_ajax_getEditCarCard', $data);
 		}
 
 		/**
@@ -124,9 +153,12 @@
 		{}
 
 		/**
-		 * BackOffice | Requête AJAX pour ajouter un véhicule à la BD
+		 * BackOffice | Requête AJAX pour afficher la div d'ajout
+		 *				d'un véhicule à la BD
 		 */
-		public function addCar()
-		{}
+		public function getAddCarCard()
+		{
+			$this->show('car/backoffice_ajax_getAddCarCard');
+		}
 
 	}

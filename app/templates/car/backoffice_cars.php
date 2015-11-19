@@ -5,10 +5,10 @@
 
 <?php $this->start('main_content') 								?>
 
-	<div id="carTable" data-ajax-path="<?= $this->url('showCarTable'); ?>"></div>
+	<div id="carTable" data-ajax-path="<?= $this->url('getCarTable'); ?>"></div>
 
 	<div class="divAddCar">
-	  <button class="btn btn-primary btnJS btnAddCar">Ajouter un véhicule</button>
+	  <button class="btn btn-primary btnJS btnAddCarCard" data-ajax-path="<?= $this->url('getAddCarCard'); ?>">Ajouter un véhicule</button>
 	</div>
 
 	<div class="carCard"></div>

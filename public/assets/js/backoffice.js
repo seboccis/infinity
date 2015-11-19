@@ -1,3 +1,28 @@
+function showCarCard(response)
+{
+	$('#carTable').fadeOut(500).empty();
+	$('.divAddCar').fadeOut(0);
+	$('.carCard').html(response).fadeIn(500);
+}
+
+function getEditCarCard(event)
+{
+	event.preventDefault();
+
+	var idCar 	   = $(this).attr('data-ajax-id');
+	var path	   = $(this).attr('data-ajax-path');
+
+	$.ajax({
+		url: path,
+		data:{
+			id: idCar,
+		} 
+	})
+	.done(showCarCard);
+
+	event.stopPropagation();
+}
+
 function deleteCar(event)
 {
 	event.preventDefault();
@@ -21,11 +46,28 @@ function deleteCar(event)
 	event.stopPropagation();
 }
 
-function addCar(event)
+function getAddCarCard(event)
 {
 	event.preventDefault();
 
-// Implémenter l'ajout d'un véhicule
+	var path = $(this).attr('data-ajax-path');
+
+	$.ajax({
+		url: path, 
+	})
+	.done(showCarCard);
+
+	event.stopPropagation();
+}
+
+function goBackToCarTable(event)
+{
+	event.preventDefault();
+
+	initCarTable();
+	$('.carCard').empty().fadeOut(500);
+	$('#carTable').fadeIn(500);
+	$('.divAddCar').fadeIn(0);
 
 	event.stopPropagation();
 }
@@ -62,7 +104,9 @@ function initPage()
 	}
 }
 
+$('section').on('click', '.anchorEditCarCard', getEditCarCard);
 $('section').on('click', '.anchorDeleteCarCard', deleteCar);
-$('.btnAddCar').on('click', addCar);
+$('.btnAddCarCard').on('click', getAddCarCard);
+$('section').on('click', '.btnGoBackToCarTable', goBackToCarTable);
 $('.btnBackToFrontOffice').on('click', goBackToFrontOffice);
 $(window).on('load', initPage);

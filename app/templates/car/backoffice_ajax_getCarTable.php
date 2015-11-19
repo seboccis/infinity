@@ -21,8 +21,8 @@
 	    	<td><?= $car['brand']; ?></td>
 	    	<td><?= $car['model']; ?></td>
 	    	<td>
-		      	<a href="" class="anchorEditCarCard" data-id="<?= $car['id']; ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-		      	<a href="" class="anchorDeleteCarCard" data-id="<?= $car['id']; ?>" data-ajax-path="<?= $this->url('deleteCar'); ?>" data-legend="<?= $car['genre']; ?> <?= $car['brand']; ?> <?= $car['model']; ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+		      	<a href="" class="anchorEditCarCard" data-ajax-id="<?= $car['id']; ?>" data-ajax-path="<?= $this->url('getEditCarCard'); ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+		      	<a href="" class="anchorDeleteCarCard" data-ajax-id="<?= $car['id']; ?>" data-ajax-path="<?= $this->url('deleteCar'); ?>" data-legend="<?= $car['genre']; ?> <?= $car['brand']; ?> <?= $car['model']; ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 	    	</td>
 	    </tr>
 

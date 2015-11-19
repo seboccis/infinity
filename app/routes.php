@@ -53,12 +53,15 @@
 		['GET', '/reservation/validateReservation/', 'Form#validateReservation', 'validateReservation'],
 
 		/*Aller chercher le tableau de véhicules*/ 
-		['GET', '/backoffice/showCarTable/', 'Car#showCarTable', 'showCarTable'],
+		['GET', '/backoffice/getCarTable/', 'Car#getCarTable', 'getCarTable'],
+
+		/*Afficher la div de modification d'un véhicule de la BD*/ 
+		['GET', '/backoffice/getEditCarCard/', 'Car#getEditCarCard', 'getEditCarCard'],
 
 		/*Supprimer un véhicule de la BD*/ 
 		['GET', '/backoffice/deleteCar/', 'Car#deleteCar', 'deleteCar'],
 
-		/*Ajouter un véhicule à la BD*/ 
-		['GET', '/backoffice/addCar/', 'Car#addCar', 'addCar'],
+		/*Afficher la div d'ajout d'un véhicule à la BD*/ 
+		['GET', '/backoffice/getAddCarCard/', 'Car#getAddCarCard', 'getAddCarCard'],
 
 	);
