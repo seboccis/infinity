@@ -145,6 +145,25 @@
 
 			$this->show('car/backoffice_ajax_getEditCarCard', $data);
 		}
+		
+		/**
+		 * BackOffice | Requête AJAX pour afficher la div de confirmation
+		 *				de modification d'un véhicule de la BD
+		 */
+		public function getConfirmEditCarCard()
+		{
+			$this->show('car/backoffice_ajax_getConfirmEditCarCard');
+		}
+
+		/**
+		 * BackOffice | Requête AJAX pour modifier un véhicule de la BD
+		 */
+		public function editCar()
+		{
+			// A implémenter
+
+			die();
+		}
 
 		/**
 		 * BackOffice | Requête AJAX pour supprimer un véhicule de la BD
@@ -159,6 +178,25 @@
 		public function getAddCarCard()
 		{
 			$this->show('car/backoffice_ajax_getAddCarCard');
+		}
+
+		/**
+		 * BackOffice | Requête AJAX pour afficher la div de confirmation
+		 *				d'ajout d'un véhicule à la BD
+		 */
+		public function getConfirmAddCarCard()
+		{
+			$this->show('car/backoffice_ajax_getConfirmAddCarCard');
+		}
+
+		/**
+		 * BackOffice | Requête AJAX pour ajouter un véhicule à la BD
+		 */
+		public function addCar()
+		{
+			// A implémenter
+
+			die();
 		}
 
 	}

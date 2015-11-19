@@ -53,15 +53,26 @@
 		['GET', '/reservation/validateReservation/', 'Form#validateReservation', 'validateReservation'],
 
 		/*Aller chercher le tableau de véhicules*/ 
-		['GET', '/backoffice/getCarTable/', 'Car#getCarTable', 'getCarTable'],
+		['GET', '/backoffice/cars/getCarTable/', 'Car#getCarTable', 'getCarTable'],
 
 		/*Afficher la div de modification d'un véhicule de la BD*/ 
-		['GET', '/backoffice/getEditCarCard/', 'Car#getEditCarCard', 'getEditCarCard'],
+		['GET', '/backoffice/cars/getEditCarCard/', 'Car#getEditCarCard', 'getEditCarCard'],
+		
+		/*Afficher la div de confirmation de modification d'un véhicule de la BD*/ 
+		['GET', '/backoffice/cars/getConfirmEditCarCard/', 'Car#getConfirmEditCarCard', 'getConfirmEditCarCard'],
+		
+		/*Modifier un véhicule de la BD*/ 
+		['GET', '/backoffice/cars/editCar/', 'Car#editCar', 'editCar'],
 
 		/*Supprimer un véhicule de la BD*/ 
-		['GET', '/backoffice/deleteCar/', 'Car#deleteCar', 'deleteCar'],
+		['GET', '/backoffice/cars/deleteCar/', 'Car#deleteCar', 'deleteCar'],
 
 		/*Afficher la div d'ajout d'un véhicule à la BD*/ 
-		['GET', '/backoffice/getAddCarCard/', 'Car#getAddCarCard', 'getAddCarCard'],
+		['GET', '/backoffice/cars/getAddCarCard/', 'Car#getAddCarCard', 'getAddCarCard'],
 
+		/*Afficher la div de confirmation d'ajout d'un véhicule à la BD*/ 
+		['GET', '/backoffice/cars/getConfirmAddCarCard/', 'Car#getConfirmAddCarCard', 'getConfirmAddCarCard'],
+		
+		/*Ajouter un véhicule à la BD*/ 
+		['GET', '/backoffice/cars/addCar/', 'Car#addCar', 'addCar'],
 	);

@@ -31,3 +31,7 @@
 	</tbody>
 
 </table>
+
+<div class="divAddCar">
+  <button class="btn btn-primary btnJS btnAddCarCard" data-ajax-path="<?= $this->url('getAddCarCard'); ?>">Ajouter un véhicule</button>
+</div>

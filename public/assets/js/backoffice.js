@@ -1,8 +1,13 @@
 function showCarCard(response)
 {
 	$('#carTable').fadeOut(500).empty();
-	$('.divAddCar').fadeOut(0);
 	$('.carCard').html(response).fadeIn(500);
+}
+
+function showConfirmCarCard(response)
+{
+	$('.carCard').fadeOut(500);
+	$('.confirmCarCard').html(response).fadeIn(500);
 }
 
 function getEditCarCard(event)
@@ -19,6 +24,34 @@ function getEditCarCard(event)
 		} 
 	})
 	.done(showCarCard);
+
+	event.stopPropagation();
+}
+
+function getConfirmEditCarCard(event)
+{
+	event.preventDefault();
+
+	var path = $(this).attr('data-ajax-path');
+
+	$.ajax({
+		url: path, 
+	})
+	.done(showConfirmCarCard);
+
+	event.stopPropagation();
+}
+
+function editCar(event)
+{
+	event.preventDefault();
+
+	var path = $('.btnEditCar').attr('data-ajax-path');
+
+	$.ajax({
+		url: path, 
+	})
+	.done(goBackToCarTable);
 
 	event.stopPropagation();
 }
@@ -60,16 +93,52 @@ function getAddCarCard(event)
 	event.stopPropagation();
 }
 
-function goBackToCarTable(event)
+function getConfirmAddCarCard(event)
 {
 	event.preventDefault();
 
-	initCarTable();
-	$('.carCard').empty().fadeOut(500);
-	$('#carTable').fadeIn(500);
-	$('.divAddCar').fadeIn(0);
+	var path = $(this).attr('data-ajax-path');
+
+	$.ajax({
+		url: path, 
+	})
+	.done(showConfirmCarCard);
 
 	event.stopPropagation();
+}
+
+function addCar(event)
+{
+	event.preventDefault();
+
+	var path = $('.btnAddCar').attr('data-ajax-path');
+
+	$.ajax({
+		url: path, 
+	})
+	.done(goBackToCarTable);
+
+	event.stopPropagation();
+}
+
+function goBackToCarCard(event)
+{
+	event.preventDefault();
+
+	$('.confirmCarCard').empty().fadeOut(500);
+	$('.carCard').fadeIn(500);
+
+	event.stopPropagation();
+}
+
+function goBackToCarTable()
+{
+
+	initCarTable();
+	$('.carCard').empty().fadeOut(500);
+	$('.confirmCarCard').empty().fadeOut(500);
+	$('#carTable').fadeIn(500);
+
 }
 
 function goBackToFrontOffice(event)
@@ -104,9 +173,14 @@ function initPage()
 	}
 }
 
+$(window).on('load', initPage);
 $('section').on('click', '.anchorEditCarCard', getEditCarCard);
+$('section').on('click', '.btnGetConfirmEditCarCard', getConfirmEditCarCard);
+$('section').on('click', '.btnEditCar', editCar);
 $('section').on('click', '.anchorDeleteCarCard', deleteCar);
-$('.btnAddCarCard').on('click', getAddCarCard);
+$('section').on('click', '.btnAddCarCard', getAddCarCard);
+$('section').on('click', '.btnGetConfirmAddCarCard', getConfirmAddCarCard);
+$('section').on('click', '.btnAddCar', addCar);
+$('section').on('click', '.btnGoBackToCarCard', goBackToCarCard);
 $('section').on('click', '.btnGoBackToCarTable', goBackToCarTable);
 $('.btnBackToFrontOffice').on('click', goBackToFrontOffice);
-$(window).on('load', initPage);

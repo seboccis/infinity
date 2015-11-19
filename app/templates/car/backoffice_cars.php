@@ -7,10 +7,8 @@
 
 	<div id="carTable" data-ajax-path="<?= $this->url('getCarTable'); ?>"></div>
 
-	<div class="divAddCar">
-	  <button class="btn btn-primary btnJS btnAddCarCard" data-ajax-path="<?= $this->url('getAddCarCard'); ?>">Ajouter un véhicule</button>
-	</div>
-
 	<div class="carCard"></div>
+
+	<div class="confirmCarCard"></div>
 	
 <?php $this->stop('main_content') ?>
