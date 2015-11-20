@@ -169,7 +169,11 @@
 		 * BackOffice | Requête AJAX pour supprimer un véhicule de la BD
 		 */
 		public function deleteCar()
-		{}
+		{
+			// A implémenter
+
+			die();
+		}
 
 		/**
 		 * BackOffice | Requête AJAX pour afficher la div d'ajout

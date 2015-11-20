@@ -5,12 +5,18 @@ function initFormReservation()
 	$('#inputName').parent().removeClass('has-error');
 	$('#inputPhoneNumber').parent().removeClass('has-error');
 	$('#inputEmail').parent().removeClass('has-error');
+	$('#selectCategory').parent().removeClass('has-error');
+	$('#selectCar').parent().removeClass('has-error');
+	$('#inputDate').parent().removeClass('has-error');
 	$('#inputOrigin').parent().removeClass('has-error');
 	$('#inputDestination').parent().removeClass('has-error');
 
 	$('#errorSpanName').empty().css({'display':'none'});
 	$('#errorSpanPhoneNumber').empty().css({'display':'none'});
 	$('#errorSpanEmail').empty().css({'display':'none'});
+	$('#errorSpanCategory').empty().css({'display':'none'});
+	$('#errorSpanCar').empty().css({'display':'none'});
+	$('#errorSpanDate').empty().css({'display':'none'});
 	$('#errorSpanOrigin').empty().css({'display':'none'});
 	$('#errorSpanDestination').empty().css({'display':'none'});
 
@@ -29,6 +35,18 @@ function showErrorSpan(errorSpans)
 	if(errorSpans['errorEmail'].length > 0){
 		$('#inputEmail').parent().addClass('has-error');
 		$('#errorSpanEmail').css({'display':'inline'}).html(errorSpans['errorEmail']);
+	}
+	if(errorSpans['errorCategory'].length > 0){
+		$('#selectCategory').parent().addClass('has-error');
+		$('#errorSpanCategory').css({'display':'inline'}).html(errorSpans['errorCategory']);
+	}
+	if(errorSpans['errorCar'].length > 0){
+		$('#selectCar').parent().addClass('has-error');
+		$('#errorSpanCar').css({'display':'inline'}).html(errorSpans['errorCar']);
+	}
+	if(errorSpans['errorDate'].length > 0){
+		$('#inputDate').parent().addClass('has-error');
+		$('#errorSpanDate').css({'display':'inline'}).html(errorSpans['errorDate']);
 	}
 	if(errorSpans['errorOrigin'].length > 0){
 		$('#inputOrigin').parent().addClass('has-error');

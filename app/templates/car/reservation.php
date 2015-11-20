@@ -94,33 +94,6 @@
 		    	</div>
 		    </div>
 
-		    <!-- <div class="form-group">
-		    	<label for="inputAddress" class="col-lg-3 control-label">
-		    		Adresse
-		    	</label>
-		    	<div class="col-lg-9">
-		        	<input class="form-control" id="inputAddress" name="address" placeholder="Adresse" type="text" <?php if(isset($session['user']['address'])){ echo 'value="' . $session['user']['address'] . '"'; } ?>>
-		    	</div>
-		    </div>
-		    
-		    <div class="form-group">
-		    	<label for="inputCity" class="col-lg-3 control-label">
-		    		Ville
-		    	</label>
-		    	<div class="col-lg-9">
-		        	<input class="form-control" id="inputCity" name="city" placeholder="Ville" type="text" <?php if(isset($session['user']['city'])){ echo 'value="' . $session['user']['city'] . '"'; } ?>>
-		    	</div>
-		    </div>
-		    
-		    <div class="form-group">
-		    	<label for="inputZipcode" class="col-lg-3 control-label">
-		    		Code postal
-		    	</label>
-		    	<div class="col-lg-9">
-		        	<input class="form-control" id="inputZipcode" name="zipcode" placeholder="Code postal" type="text" <?php if(isset($session['user']['zipcode'])){ echo 'value="' . $session['user']['zipcode'] . '"'; } ?>>
-		    	</div>
-		    </div> -->
-
 	    	<div class="col-lg-12 btnDiv">
 	        	<button class="btn btn-default btnJS" id="btnCancelFormReservationPersonalInformations" data-ajax-path="<?= $this->url('unsetSessionUser'); ?>">Vider les champs des informations personnelles</button>
 	        </div>
@@ -136,7 +109,7 @@
 			<legend>Votre demande</legend>
 
 		    <div class="form-group">
-		    	<label for="selectGenre" class="col-lg-3 control-label">
+		    	<label for="selectCategory" class="col-lg-3 control-label">
 		    		Choix de la prestation
 		    		<span class="compulsory">
 		    			*
@@ -144,7 +117,7 @@
 		    		</span>
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<select class="form-control" id="selectGenre" name="category">
+		        	<select class="form-control" id="selectCategory" name="category">
 		        		<option class="defaultOption" value="0">Choisir la prestation demandée</option>
 		        		<option value="1" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 1){ echo "selected"; } ?>>Transfert</option>
 		        		<option value="2" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 2){ echo "selected"; } ?>>Mise à disposition</option>
@@ -152,11 +125,11 @@
 		        		<option value="4" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 4){ echo "selected"; } ?>>Conciergerie</option>
 		        	</select>
 		    	</div>
-		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanGenre"></span>
+		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanCategory"></span>
 		    </div>
 
 		    <div class="form-group">
-		    	<label for="selectModel" class="col-lg-3 control-label">
+		    	<label for="selectCar" class="col-lg-3 control-label">
 		    		Choix du véhicule
 		    		<span class="compulsory">
 		    			*
@@ -164,7 +137,7 @@
 		    		</span>
 		    	</label>
 		    	<div class="col-lg-9">
-		        	<select class="form-control" id="selectModel" name="model">
+		        	<select class="form-control" id="selectCar" name="car">
 
 		        		<option class="defaultOption" value="0">Choisir le véhicule désiré</option>
 
@@ -184,6 +157,7 @@
 
 		        	</select>
 		    	</div>
+		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanCar"></span>
 		    </div>
 
 			<div class="form-group">

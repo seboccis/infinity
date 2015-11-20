@@ -7,13 +7,14 @@
 
 	class FormController extends Controller
 	{
+		protected $dateRegex = '#^[0-3][0-9]/[0-1][0-9]/2[0-9][0-9][0-9]$#';
 
 		protected $errorMsg 		= "Veuillez remplir le champ obligatoire.";
 		protected $errorEmailMsg 	= "Veuillez entrer un email valide.";
+		protected $errorSelectMsg	= "Veuillez choisir entre les différentes propositions.";
+		protected $errorDateMsg 	= "Veuillez entrer une date valide.";
 		protected $errorAddressMsg 	= "Une des adresses entrées n'est pas reconnue. Veuillez utiliser les propositions qui vous sont faites.";
 		protected $errorRouteMsg	= "Une erreur est survenue lors du calcul du coût de la prestation. Veuillez vérifier les adresses que vous avez entrées et utiliser, dans la mesure du possible, celles qui vous sont proposées.";
-		protected $errorCaptchaMsg 	= "Essayer à nouveau";
-		protected $errorSelectMsg	= "Veuillez choisir entre les différentes propositions.";
 
 		protected function validateName($name)
 		{
@@ -49,6 +50,28 @@
 			}
 
 			return $errorEmail;
+		}
+
+		protected function validateSelect($selectedValue)
+		{
+			$errorSelect = '';
+
+			if($selectedValue < 1){
+				$errorSelect = $this->errorSelectMsg;
+			}
+
+			return $errorSelect;
+		}
+
+		protected function validateDate($date)
+		{
+			$errorDate = '';
+
+			if(empty($date) || !preg_match($this->dateRegex, $date)){
+				$errorDate = $this->errorDateMsg;
+			}
+
+			return $errorDate;
 		}
 
 		protected function validateAddresses($origin, $destination)
@@ -110,6 +133,9 @@
 			$errorPhoneNumber 	 = $this->validatePhoneNumber($phoneNumber);
 			$errorEmail 		 = $this->validateEmail($email);
 
+			$errorCategory		 = $this->validateSelect($category);
+			$errorCar		 	 = $this->validateSelect($car);
+			$errorDate 			 = $this->validateDate($date);
 			$arrayErrorAddresses = $this->validateAddresses($origin, $destination);
 			$errorOrigin 		 = $arrayErrorAddresses[0];
 			$errorDestination 	 = $arrayErrorAddresses[1];
@@ -136,7 +162,10 @@
 
 			}
 
-			if(    $errorOrigin		 == ''
+			if(    $errorCategory	 == ''
+				&& $errorCar 		 == ''
+				&& $errorDate 		 == ''
+				&& $errorOrigin		 == ''
 				&& $errorDestination == ''){
 				$request = "valid";
 			}
@@ -158,6 +187,9 @@
 															'errorName' 		=> $errorName,
 															'errorPhoneNumber'  => $errorPhoneNumber,
 															'errorEmail' 		=> $errorEmail,
+															'errorCategory' 	=> $errorCategory,
+															'errorCar' 			=> $errorCar,
+															'errorDate' 		=> $errorDate,
 															'errorOrigin' 		=> $errorOrigin,
 															'errorDestination'	=> $errorDestination,
 														   ),	
