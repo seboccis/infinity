@@ -152,25 +152,25 @@ $('#btnCancelFormReservationRequest').on('click', cancelFormReservationRequest);
 
 function initRequest()
 {
-	var genre = $('#selectGenre option:selected').attr('value');
+	var category = $('#selectCategory option:selected').attr('value');
 	
 	$('.hiddenFormGroup').fadeOut(0);
 
-	if(genre == 1){
+	if(category == 1){
 		$('.formGroupTransfert').fadeIn(0);
 	}
-	else if(genre == 2){
+	else if(category == 2){
 		$('.formGroupDisposition').fadeIn(0);
 	}
-	else if(genre == 3){
+	else if(category == 3){
 		$('.formGroupExcursion').fadeIn(0);
 	}
-	else if(genre == 4){
+	else if(category == 4){
 		$('.formGroupConciergerie').fadeIn(0);
 	}
 }
 
-$('#selectGenre').on('change', initRequest);
+$('#selectCategory').on('change', initRequest);
 
 google.maps.event.addDomListener(window, 'load', function() {
 			var inputAddress 	 = new google.maps.places.Autocomplete(document.getElementById('inputAddress'), { types: ['geocode'], componentRestrictions: {country: 'fr'} });
