@@ -6,15 +6,15 @@ function details(event)
 
 	if(that.hasClass('showDetails')){
 		that.removeClass('showDetails').addClass('hideDetails');
-		that.next().fadeOut(300);
+		that.next().fadeOut(100);
 		that.children().removeClass('glyphicon-zoom-in').addClass('glyphicon-zoom-out');
-		that.parent().parent().next().fadeIn(300);		
+		that.parent().parent().next().removeClass('hidden-xs');		
 	}
 	else{
 		that.removeClass('hideDetails').addClass('showDetails');
-		that.next().fadeIn(300);
+		that.next().fadeIn(100);
 		that.children().removeClass('glyphicon-zoom-out').addClass('glyphicon-zoom-in');
-		that.parent().parent().next().fadeOut(300);		
+		that.parent().parent().next().addClass('hidden-xs');		
 	}
 
 	event.stopPropagation();
