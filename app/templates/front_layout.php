@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/reset.css') ?>">
   <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/journal.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/frontoffice.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
 
@@ -29,7 +30,7 @@
   			</div>
 
   			<div class="col-lg-12 navigation">
-  				<nav class="navbar navbar-default">
+  				<nav class="navbar navbar-inverse">
   					<div class="container-fluid">
 
   						<div class="navbar-header">
@@ -45,8 +46,18 @@
   						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   							<ul class="nav navbar-nav">
   								<li <?php if($page == 1){ echo 'class="active"' ;} ?>><a href="<?php echo $this->url('home');?>">Accueil</a></li>
-  								<li <?php if($page == 2){ echo 'class="active"' ;} ?>><a href="<?php echo $this->url('services_limousine');?>">Services Limousine</a></li>
-  								<li <?php if($page == 3){ echo 'class="active"' ;} ?>><a href="<?php echo $this->url('excursions');?>">Excursions</a></li>
+  								<li <?php if($page == 2){ echo 'class="active"' ;} ?>><a href="<?php echo $this->url('services_limousine');?>">Limousine Services</a></li>
+                  <li <?php if($page == 3 || $page == 31 || $page == 32 || $page == 33){ echo 'class="active"' ;} ?>>
+                    <a href="<?php echo $this->url('airport');?>">Services aéroportuaires</a>
+                    <li class="dropdown<?php if($page == 3 || $page == 31 || $page == 32 || $page == 33){ echo ' active' ;} ?>">
+                      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="<?php echo $this->url('departure');?>">Au départ</a></li>
+                        <li><a href="<?php echo $this->url('transit');?>">En transit</a></li>
+                        <li><a href="<?php echo $this->url('arrival');?>">A l'arrivée</a></li>
+                      </ul>
+                    </li>
+                  </li>
   								<li <?php if($page == 4){ echo 'class="active"' ;} ?>><a href="<?php echo $this->url('conciergerie');?>">Conciergerie</a></li>
   								<li <?php if($page == 5){ echo 'class="active"' ;} ?>><a href="<?php echo $this->url('vehicules');?>">Véhicules</a></li>
   								<li <?php if($page == 6){ echo 'class="active"' ;} ?>><a href="<?php echo $this->url('reservation');?>">Réservation</a></li>
@@ -84,8 +95,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li><a href="<?php echo $this->url('backoffice_home');?>">Administration</a></li>
-                <!-- <li><a href="<?php echo $this->url('services_limousine');?>">Services Limousine</a></li>
-                                <li><a href="<?php echo $this->url('excursions');?>">Excursions</a></li> -->                
               </ul>
             </div>
           </div>
@@ -96,6 +105,7 @@
 	</div>
 
   <script type="text/javascript" src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/frontoffice.js') ?>"></script>
 
 </body>
 

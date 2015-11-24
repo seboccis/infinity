@@ -16,11 +16,35 @@
 		}
 
 		/**
-		 * Page sur les excursions
+		 * Page sur les services aéroportuaires
 		 */
-		public function excursions()
+		public function airport()
 		{
-			$this->show('default/excursions');
+			$this->show('default/airport');
+		}
+
+		/**
+		 * Page sur les services aéroportuaires au départ
+		 */
+		public function departure()
+		{
+			$this->show('default/departure');
+		}
+
+		/**
+		 * Page sur les services aéroportuaires en transit
+		 */
+		public function transit()
+		{
+			$this->show('default/transit');
+		}
+
+		/**
+		 * Page sur les services aéroportuaires à l'arrivée
+		 */
+		public function arrival()
+		{
+			$this->show('default/arrival');
 		}
 
 		/**

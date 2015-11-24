@@ -122,7 +122,8 @@
 		        		<option value="1" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 1){ echo "selected"; } ?>>Transfert</option>
 		        		<option value="2" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 2){ echo "selected"; } ?>>Mise à disposition</option>
 		        		<option value="3" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 3){ echo "selected"; } ?>>Excursion</option>
-		        		<option value="4" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 4){ echo "selected"; } ?>>Conciergerie</option>
+		        		<option value="4" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 4){ echo "selected"; } ?>>Services aéroportuaires</option>
+		        		<option value="5" <?php if(isset($session['request']['genre']) && $session['request']['genre'] == 5){ echo "selected"; } ?>>Conciergerie</option>
 		        	</select>
 		    	</div>
 		    	<span class="col-lg-9 col-lg-offset-3 errorSpan" id="errorSpanCategory"></span>

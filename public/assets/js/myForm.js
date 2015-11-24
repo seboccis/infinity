@@ -166,6 +166,9 @@ function initRequest()
 		$('.formGroupExcursion').fadeIn(0);
 	}
 	else if(category == 4){
+
+	}
+	else if(category == 5){
 		$('.formGroupConciergerie').fadeIn(0);
 	}
 }

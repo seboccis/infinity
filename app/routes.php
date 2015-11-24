@@ -10,8 +10,17 @@
 		/*Page sur les services limousine*/ 
 		['GET', '/services_limousine/', 'Car#services_limousine', 'services_limousine'],
 
-		/*Page sur les excursions*/ 
-		['GET', '/excursions/', 'Default#excursions', 'excursions'],
+		/*Page sur les services aéroportuaires*/ 
+		['GET', '/services_aeroportuaires/', 'Default#airport', 'airport'],
+
+		/*Page sur les services aéroportuaires au départ*/ 
+		['GET', '/services_aeroportuaires/depart/', 'Default#departure', 'departure'],
+
+		/*Page sur les services aéroportuaires en transit*/ 
+		['GET', '/services_aeroportuaires/transit/', 'Default#transit', 'transit'],
+
+		/*Page sur les services aéroportuaires à l'arrivée*/ 
+		['GET', '/services_aeroportuaires/arrivee/', 'Default#arrival', 'arrival'],
 
 		/*Page sur les services de conciergerie*/ 
 		['GET', '/conciergerie/', 'Default#conciergerie', 'conciergerie'],
