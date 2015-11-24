@@ -3,6 +3,7 @@
 	namespace Controller;
 
 	use \W\Controller\Controller;
+	use Controller\SessionController;
 
 	class DefaultController extends Controller
 	{
@@ -20,7 +21,20 @@
 		 */
 		public function airport()
 		{
-			$this->show('default/airport');
+			$sessionController = new SessionController();
+			$session = $sessionController->session;
+
+			$category = 0;
+
+			if(isset($session['airport']['category'])){
+				$category = $session['airport']['category'];
+			}
+
+			$data = [
+						'category' => $category,
+					];
+
+			$this->show('default/airport', $data);
 		}
 
 		/**

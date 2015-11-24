@@ -50,6 +50,9 @@
 		['GET', '/carousel/getCarCarouselCard/', 'Car#getCarCarouselCard', 'getCarCarouselCard'],
 
 		/*Sélection d'un véhicule*/ 
+		['GET', '/airport/setAirportServiceChoice/', 'Session#setAirportServiceChoice', 'setAirportServiceChoice'],
+
+		/*Sélection d'un véhicule*/ 
 		['GET', '/reservation/selectCar/', 'Car#selectCar', 'selectCar'],
 
 		/*Vider la session des données personnelles*/ 

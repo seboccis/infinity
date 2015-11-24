@@ -42,6 +42,26 @@
 			echo '</pre>';
 		}
 
+		public function setAirportServiceChoice()
+		{
+			$category = $_GET['category'];
+
+			if(	   isset($this->session['airport']['category'])
+				&& $this->session['airport']['category'] != $category){
+				$this->unsetSessionAirport();
+			}
+
+			$this->setSession('airport', 'category', $category);
+
+			$this->refreshSession();
+		}
+
+		protected function unsetSessionAirport()
+		{
+			unset($this->session['airport']);
+			$this->refreshSession();
+		}
+
 		public function setSessionUser($arrayPersonalData)
 		{
 

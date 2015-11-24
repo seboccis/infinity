@@ -20,4 +20,26 @@ function details(event)
 	event.stopPropagation();
 }
 
+function chooseAirportService(event)
+{
+	event.preventDefault();
+
+	var path 	 = $(this).attr('data-ajax-path');
+	var category = $(this).attr('data-ajax-category');
+	var url 	 = $(this).attr('data-href');
+
+	$.ajax({
+		url: path,
+		data: {
+			category: category,
+		}
+	})
+	.done(function(){
+		$(location).attr('href', url);
+	});
+
+	event.stopPropagation();
+}
+
 $('.btnDetails').on('click', details);
+$('.btnAirportServiceChoice').on('click', chooseAirportService);
